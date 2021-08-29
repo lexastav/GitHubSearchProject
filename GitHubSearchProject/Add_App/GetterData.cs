@@ -3,7 +3,7 @@ using System.Net;
 
 namespace GitHubSearchProject.Add_App
 {
-    public static class GetData
+    public static class GetterData
     {
         public static string Get(string searchString)
         {

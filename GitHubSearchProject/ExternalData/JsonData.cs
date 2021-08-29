@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace GitHubProjectsSearch.ExternalData
 {
-    public class JsonData
+    public partial class JsonData
     {
         [JsonPropertyName("total_count")]
         public int TotalCount { get; set; }
@@ -319,28 +319,28 @@ namespace GitHubProjectsSearch.ExternalData
         public string NodeId { get; set; }
     }
 
-    //public partial class JsonData
-    //{
-    //    public static JsonData FromJson(string json) => JsonConvert.DeserializeObject<JsonData>(json, GitHubProjectsSearch.ExternalData.Converter.Settings);
-    //}
+    public partial class JsonData
+    {
+        public static JsonData FromJson(string json) => JsonConvert.DeserializeObject<JsonData>(json, GitHubProjectsSearch.ExternalData.Converter.Settings);
+    }
 
-    //public static class Serialize
-    //{
-    //    public static string ToJson(this JsonData self) => JsonConvert.SerializeObject(self, GitHubProjectsSearch.ExternalData.Converter.Settings);
-    //}
+    public static class Serialize
+    {
+        public static string ToJson(this JsonData self) => JsonConvert.SerializeObject(self, GitHubProjectsSearch.ExternalData.Converter.Settings);
+    }
 
-    //internal static class Converter
-    //{
-    //    public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
-    //    {
-    //        MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-    //        DateParseHandling = DateParseHandling.None,
-    //        Converters =
-    //        {
-    //            new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-    //        },
-    //    };
-    //}
+    internal static class Converter
+    {
+        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
+        {
+            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+            DateParseHandling = DateParseHandling.None,
+            Converters =
+            {
+                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
+            },
+        };
+    }
 
 
 }

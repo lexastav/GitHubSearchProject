@@ -9,6 +9,6 @@ namespace GitHubProjectsSearch.Models
     public class DataViewModel
     {
         public string SearchString { get; set; }
-        public Dictionary<string, JsonData> Data { get; set; }
+        public JsonData Data { get; set; }
     }
 }
